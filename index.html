@@ -7,16 +7,12 @@
 
     <title>Black Holes</title>
 
-    <style>
-      h1 {text-align: center;}
-      p {text-align: center;}
-      div {text-align: center;}
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
 
-    table, th, td {
-  border: 1px solid rgb(255, 255, 255);
-  border-collapse: collapse;
-}
-.frame {
+<!--button-->
+<style>
+ .frame {
   width: 90%;
   margin: 40px auto;
   text-align: center;
@@ -41,7 +37,11 @@ button {
    7px 7px 20px 0px rgba(0,0,0,.1),
    4px 4px 5px 0px rgba(0,0,0,.1);
   outline: none;
-}
+} 
+</style>
+
+<!--purple/red button-->
+<style>
 /* 8 */
 .btn-8 {
   background-color: #f0ecfc;
@@ -116,7 +116,10 @@ background-image: linear-gradient(315deg, #ff0000 0%, #9000ff 74%);
 .btn-8 span:hover:after {
   width: 100%;
 }
-  
+</style>
+
+<!--black button-->
+<style>
 
 /* 9 */
 .btn-9 {
@@ -153,6 +156,106 @@ background-image: linear-gradient(315deg, #5f5f5f83 0%, #000000 74%);
     inset 4px 4px 6px 0 rgba(116, 125, 136, .3);
 }
 
+</style>
+
+<!--general style-->
+<style>
+        h1 {text-align: center;}
+      p {text-align: center;}
+      div {text-align: center;}
+            ul.myUL {
+  list-style-type: none;
+  margin: 3;
+  padding: 3;
+}
+a.nav-link:link
+{
+   color: #ffffff;
+   text-decoration: none;
+}
+a.nav-link:visited
+{
+   color: #ffffff;
+   text-decoration: none;
+}
+a.nav-link:hover
+{
+   color: #ffffff;
+   text-decoration: none;
+}
+a.nav-link:active
+{
+   color: #ffffff;
+   text-decoration: none;
+}
+
+      div.list {
+  text-align: center;
+}
+ol.OL1 {
+  display: inline-block;
+  text-align: center;
+}
+</style>
+
+<!--breathing text-->
+<style>
+  @font-face {
+  font-family: "Geist";
+  src: url("https://pham.codes/d/GeistMonoVF.woff2") format("woff2");
+}
+
+.fancyt {
+  font-family: "Geist";
+  font-size: 128px;
+  margin: 0;
+
+  background-color: white;
+  background-image: linear-gradient(0deg, rgb(255, 255, 255) 40%, #000000);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -moz-background-clip: text;
+  -moz-text-fill-color: transparent;
+
+  --wght-min: 32;
+  --wght-max: 240;
+}
+
+p > span {
+  animation: breath 1.5s alternate ease-in-out;
+  animation-iteration-count: infinite;
+  animation-delay: 1s;
+  animation-fill-mode: both;
+}
+
+@keyframes breath {
+  0% {
+    font-variation-settings: "wght" var(--wght-min);
+  }
+  100% {
+    font-variation-settings: "wght" var(--wght-max);
+  }
+}
+
+/* Setup */
+
+.container1 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.container1 {
+  display:;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+</style>
+
+<!--fancy switch-->
+    <style>
 
   .button {
     border-radius: 60px;
@@ -232,40 +335,6 @@ background-image: linear-gradient(315deg, #5f5f5f83 0%, #000000 74%);
       right: 0;
     }
 
-      ul.myUL {
-  list-style-type: none;
-  margin: 3;
-  padding: 3;
-}
-a.nav-link:link
-{
-   color: #ffffff;
-   text-decoration: none;
-}
-a.nav-link:visited
-{
-   color: #ffffff;
-   text-decoration: none;
-}
-a.nav-link:hover
-{
-   color: #ffffff;
-   text-decoration: none;
-}
-a.nav-link:active
-{
-   color: #ffffff;
-   text-decoration: none;
-}
-
-      div.list {
-  text-align: center;
-}
-ol.OL1 {
-  display: inline-block;
-  text-align: center;
-}
-<style>
 * {
 	border: 0;
 	box-sizing: border-box;
@@ -452,214 +521,170 @@ ol.OL1 {
 	transition-timing-function: steps(1,start), var(--trans-timing);
 }
 
-  @font-face {
-  font-family: "Geist";
-  src: url("https://pham.codes/d/GeistMonoVF.woff2") format("woff2");
-}
-
-.fancyt {
-  font-family: "Geist";
-  font-size: 128px;
-  margin: 0;
-
-  background-color: white;
-  background-image: linear-gradient(0deg, rgb(255, 255, 255) 40%, #000000);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  -moz-background-clip: text;
-  -moz-text-fill-color: transparent;
-
-  --wght-min: 32;
-  --wght-max: 240;
-}
-
-p > span {
-  animation: breath 1.5s alternate ease-in-out;
-  animation-iteration-count: infinite;
-  animation-delay: 1s;
-  animation-fill-mode: both;
-}
-
-@keyframes breath {
-  0% {
-    font-variation-settings: "wght" var(--wght-min);
-  }
-  100% {
-    font-variation-settings: "wght" var(--wght-max);
-  }
-}
-
-/* Setup */
-
-.container1 {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100%;
-}
-
-.container {
-  display:;
-  justify-content: center;
-  align-items: center;
-  height: 100%;
-}
-
-html,
-body {
-  height: 100%;
-  background: #111111;
-  color: white;
-}
-
-  #grad {
-  background-image: linear-gradient(to bottom right, red, yellow);
-}
 </style>
 
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+<!--body style-->
+<style>
 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+  body{
+    background-color: #ff0000;
+    color:#ffffff
+  }
+
+</style>
 
 </head>
 
-<body style="background-color: rgb(255, 0, 0); color: rgb(255, 255, 255);">
+<body style="height:100%;">
 
-<div class="container">
+<div class="container" style="height:100%;">
 
-<div class="container:" style="height:100%; background-color: #141414; width:fit-content; text-align: center;">
+  <div class="container:" style="height:100%; background-color: #141414; width:fit-content; text-align: center;">
 
-  <div id="header">
-
-
-  <div class="container text-center">
-    <div class="row">
-      <div class="col-sm justify-content-end">
-        <img src="https://cdn-icons-png.flaticon.com/512/8784/8784699.png" width="300" height="300">
-      </div>
-      <div class="col-sm justify-content-start">
-        <div class="container1">
-            <p class="fancyt" aria-label="Black">
-        <span aria-hidden="true">Black Hole's</span>
-      </p>
-      </div>
-    </div>
-  </div>
-
-    <img src="https://media1.giphy.com/media/TIj8cbzWYKnE9ul3ab/giphy.gif?cid=6c09b952rto9420iv4gu8d171yh7125m15nbg11ugx5ohk1p&ep=v1_stickers_related&rid=giphy.gif&
-    ct=s" alt="alternatetext" width="100%" height="40">
+    <div id="header">
 
 
-    <div class="container text-align">
-      <div class="row">
-
-        <div class="col">
-          <a href="./index.html"><button class="custom-btn btn-9">Read More</button></a> 
+            <div class="container text-align">
+              <div class="row" style="align-content: center;">
+                <div class="col col-sm-12 col-md-12 col-lg-12" style="align-items: center;">
+                <img src="https://cdn-icons-png.flaticon.com/512/8784/8784699.png" width="300" height="300">
+              </div>
+              <div class="col">
+                <div class="container1">
+                    <p class="fancyt" aria-label="Black">
+                <span aria-hidden="true">Black Hole's</span>
+              </p>
+            </div>
+          </div>
         </div>
 
-        <div class="col">
-          <a href="./blackhole.html"><button class="custom-btn btn-8"><span>Old Site</span></button></button></a>
+        <div class="container text-align">
+          <div class="row">
+            <div class="col">
+            <img src="https://media1.giphy.com/media/TIj8cbzWYKnE9ul3ab/giphy.gif?cid=6c09b952rto9420iv4gu8d171yh7125m15nbg11ugx5ohk1p&ep=v1_stickers_related&rid=giphy.gif&
+            ct=s" alt="alternatetext" width="100%" height="40">
+            </div>
+          </div>
         </div>
-      </div>
-    </div>
 
-    <br>
+        <div class="container text-align">
+          <div class="row">
+            <div class="col">
+              <a href="./index.html"><button class="custom-btn btn-9">Read More</button></a> 
+            </div>
 
-    <div class="container text-align">
-      <div class="row">
-                <div class="col">
-          <img src="https://cdn.mos.cms.futurecdn.net/HsDtpFEHbDpae6wBuW5wQo.jpg" width="100%" height="100%">
+            <div class="col">
+              <a href="./blackhole.html"><button class="custom-btn btn-8"><span>Old Site</span></button></button></a>
+            </div>
+          </div>
         </div>
-        <div class="col">
 
-    <h2>Black holes are regulated by 3 values</h2>
+        <br>
+
+        <div class="container text-align">
+          <div class="row">
+                    <div class="col-12 col-xxl-3">
+              <img src="https://cdn.mos.cms.futurecdn.net/HsDtpFEHbDpae6wBuW5wQo.jpg" width="300px" height="200px">
+            </div>
+
+      <div class="col-12 col-xxl-9">
+
+        <h2>Black holes are regulated by 3 values</h2>
+      
+
     
+        <div class="list">
+            <ol class="OL1">
+              <li>Size</li>
+              <li>Spin</li>
+                <ul>
+                  <li>asd</li>
+                  <li>das</li>
+                  <li>asd</li>
+                </ul>
+              <li>Gravity</li>
+            </ol>
+          </div>
+        </div>
 
-   
-  <div class="list">
-  <ol class="OL1">
-    <li>Size</li>
-    <li>Spin</li>
-      <ul>
-        <li>asd</li>
-        <li>das</li>
-        <li>asd</li>
-      </ul>
-    <li>Gravity</li>
-  </ol>
+        <div class="col col-sm-12 col-md-12 col-lg-12">
+
+          <p>Read the <a href="https://en.wikipedia.org/wiki/Black_hole" class="nav-link">Black Hole</a> to learn even more <br> about the values and principles that guide the pursuit of our mission.</p>
+
+          <br>
+
+          <table class="table table-dark table-bordered" align="center">
+            <tr>
+              <th colspan="2">Size</th>
+              <th>Spin</th>
+              <th>Gravity</th>
+            </tr>
+            <tr>
+              <td>1</td>
+              <td>2</td>
+              <td>3</td>
+            </tr>
+            <tr>
+              <td>1</td>
+              <td>2</td>
+              <td>3</td>
+            </tr>
+          </table>
+      
+          <br>
+
+          <!--fancy switch-->
+          <label class="switch">
+          <input class="switch__input" type="checkbox" role="switch">
+          <span class="switch__base-outer"></span>
+          <span class="switch__base-inner"></span>
+          <svg class="switch__base-neon" viewBox="0 0 40 24" width="40px" height="24px">
+            <defs>
+              <filter id="switch-glow">
+                <feGaussianBlur result="coloredBlur" stddeviation="1"></feGaussianBlur>
+                <feMerge>
+                  <feMergeNode in="coloredBlur"></feMergeNode>
+                  <feMergeNode in="SourceGraphic"></feMergeNode>
+                </feMerge>
+              </filter>
+              <linearGradient id="switch-gradient1" x1="0" y1="0" x2="1" y2="0">
+                <stop offset="0%" stop-color="hsl(var(--on-hue1),90%,70%)" />
+                <stop offset="100%" stop-color="hsl(var(--on-hue2),90%,70%)" />
+              </linearGradient>
+              <linearGradient id="switch-gradient2" x1="0.7" y1="0" x2="0.3" y2="1">
+                <stop offset="25%" stop-color="hsla(var(--on-hue1),90%,70%,0)" />
+                <stop offset="50%" stop-color="hsla(var(--on-hue1),90%,70%,0.3)" />
+                <stop offset="100%" stop-color="hsla(var(--on-hue2),90%,70%,0.3)" />
+              </linearGradient>
+            </defs>
+            <path fill="none" filter="url(#switch-glow)" stroke="url(#switch-gradient1)" stroke-width="1" stroke-dasharray="0 104.26 0" stroke-dashoffset="0.01" stroke-linecap="round" d="m.5,12C.5,5.649,5.649.5,12,.5h16c6.351,0,11.5,5.149,11.5,11.5s-5.149,11.5-11.5,11.5H12C5.649,23.5.5,18.351.5,12Z"/>
+          </svg>
+          <span class="switch__knob-shadow"></span>
+          <span class="switch__knob-container">
+            <span class="switch__knob">
+              <svg class="switch__knob-neon" viewBox="0 0 48 48" width="48px" height="48px">
+                <circle fill="none" stroke="url(#switch-gradient2)" stroke-dasharray="0 90.32 0 54.19" stroke-linecap="round" stroke-width="1" r="23" cx="24" cy="24" transform="rotate(-112.5,24,24)" />
+              </svg>	
+            </span>
+          </span>
+          <span class="switch__led"></span>
+          <span class="switch__text">Power</span>
+          </label>
+
+          <div class="container text-align">
+            <div class="row" style="align-content: center;">
+              <div class="col" style="height:100%;">
+              </div>
+            </div>
+          </div>
+
+          </div>
+        </div>
+      </div>
     </div>
   </div>
-  <div class="col">
-
-    <p>Read the <a href="https://en.wikipedia.org/wiki/Black_hole" class="nav-link">Black Hole</a> to learn even more <br> about the values and principles that guide the pursuit of our mission.</p>
-
-    <br>
-
-    <table align="center" border="1">
-      <tr>
-        <th colspan="2">Size</th>
-        <th>Spin</th>
-        <th>Gravity</th>
-      </tr>
-      <tr>
-        <td>1</td>
-        <td>2</td>
-        <td>3</td>
-      </tr>
-      <tr>
-        <td>1</td>
-        <td>2</td>
-        <td>3</td>
-      </tr>
-    </table>
- 
-
-
-  <br>
-
-  <label class="switch">
-	<input class="switch__input" type="checkbox" role="switch">
-	<span class="switch__base-outer"></span>
-	<span class="switch__base-inner"></span>
-	<svg class="switch__base-neon" viewBox="0 0 40 24" width="40px" height="24px">
-		<defs>
-			<filter id="switch-glow">
-				<feGaussianBlur result="coloredBlur" stddeviation="1"></feGaussianBlur>
-				<feMerge>
-					<feMergeNode in="coloredBlur"></feMergeNode>
-					<feMergeNode in="SourceGraphic"></feMergeNode>
-				</feMerge>
-			</filter>
-			<linearGradient id="switch-gradient1" x1="0" y1="0" x2="1" y2="0">
-				<stop offset="0%" stop-color="hsl(var(--on-hue1),90%,70%)" />
-				<stop offset="100%" stop-color="hsl(var(--on-hue2),90%,70%)" />
-			</linearGradient>
-			<linearGradient id="switch-gradient2" x1="0.7" y1="0" x2="0.3" y2="1">
-				<stop offset="25%" stop-color="hsla(var(--on-hue1),90%,70%,0)" />
-				<stop offset="50%" stop-color="hsla(var(--on-hue1),90%,70%,0.3)" />
-				<stop offset="100%" stop-color="hsla(var(--on-hue2),90%,70%,0.3)" />
-			</linearGradient>
-		</defs>
-		<path fill="none" filter="url(#switch-glow)" stroke="url(#switch-gradient1)" stroke-width="1" stroke-dasharray="0 104.26 0" stroke-dashoffset="0.01" stroke-linecap="round" d="m.5,12C.5,5.649,5.649.5,12,.5h16c6.351,0,11.5,5.149,11.5,11.5s-5.149,11.5-11.5,11.5H12C5.649,23.5.5,18.351.5,12Z"/>
-	</svg>
-	<span class="switch__knob-shadow"></span>
-	<span class="switch__knob-container">
-		<span class="switch__knob">
-			<svg class="switch__knob-neon" viewBox="0 0 48 48" width="48px" height="48px">
-				<circle fill="none" stroke="url(#switch-gradient2)" stroke-dasharray="0 90.32 0 54.19" stroke-linecap="round" stroke-width="1" r="23" cx="24" cy="24" transform="rotate(-112.5,24,24)" />
-			</svg>	
-		</span>
-	</span>
-	<span class="switch__led"></span>
-	<span class="switch__text">Power</span>
-  </label>
-
-  </div>
 </div>
-</div>
-</div>
-</div>
-</div>
+
 
 </body>
 
