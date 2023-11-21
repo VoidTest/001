@@ -539,6 +539,7 @@ p > span {
   }
 #funny{
   background-color: black;
+  height: 100vh;
 }
 </style>
 
@@ -554,8 +555,8 @@ p > span {
     var text = document.body.style.container.backgroundColor = "red";
 
     if (checkBox.checked == true){
-      document.body.style.color = "black";
-      document.getElementById("funny").style.backgroundColor = "white";
+      document.body.style.color = "white";
+      document.getElementById("funny").style.backgroundColor = "gray";
     } else {
       
       document.body.style.color = "white";
@@ -664,9 +665,9 @@ p > span {
               </table>
           
               <br>
-              <button id="test" onclick="lightmodee()">light mode</button>
+              <button id="test" onclick="lightmodee()">lightskin mode</button>
 
-              <button id="test1" onclick="darkmode()">dark mode</button>
+              <button id="test1" onclick="darkmode()">black mode</button>
 
               <!--fancy switch-->
               <label class="switch">
@@ -713,6 +714,7 @@ p > span {
                 </div>
               </div>
               
+
             </div>
           </div>
         </div>
