@@ -10,7 +10,7 @@
 <!--general style-->
 <style>
             body {
-  background: #101318;
+  background: #1b1b1b;
   text-shadow: 0 0 0.4vw currentColor;
 }
 
@@ -34,7 +34,7 @@
 .periodic-table {
   display: grid;
   grid-gap: 5px;
-  grid-template-columns: repeat(18, 1fr);
+  grid-template-columns: repeat(20, 1fr);
 }
 
 .element {
@@ -74,6 +74,25 @@
   transition-duration: 100ms, 0ms, 200ms, 200ms, 200ms, 200ms;
   transition-delay: 0ms, 100ms, 0ms, 0ms, 0ms, 0ms;
 }
+
+.element .square {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  border: 2px solid;
+  box-sizing: border-box;
+  background: #101318;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  transition-property: transform, z-index, left, right, top, bottom;
+  transition-duration: 100ms, 0ms, 200ms, 200ms, 200ms, 200ms;
+  transition-delay: 0ms, 100ms, 0ms, 0ms, 0ms, 0ms;
+}
+
 .element .atomic-number {
   position: absolute;
   left: 0;
@@ -173,30 +192,6 @@
 .element input[type="radio"].deactivate:checked ~ .square {
   z-index: 1;
 }
-
-.placeholder {
-  position: relative;
-  z-index: -1;
-  font-size: 1vw;
-  padding-bottom: 100%;
-  color: #fff;
-  transition: 500ms;
-}
-.placeholder .square {
-  position: absolute;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  border: 2px solid;
-  box-sizing: border-box;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  opacity: 0.5;
-}
-
 .gap {
   position: relative;
   padding-bottom: 100%;
@@ -219,45 +214,21 @@
 
 <!--cell colors-->
 <style>
-.alkali-metal {
-  color: #ecbe59;
-}
+    .selements {
+      color: rgb(76, 105, 235);
+    }
 
-.alkaline-earth-metal {
-  color: #dee955;
-}
+    .pelements {
+      color: rgb(243, 233, 94);
+    }
 
-.lanthanoid {
-  color: #ec77a3;
-}
+    .delements {
+      color: rgb(201, 62, 62);
+    }
 
-.actinoid {
-  color: #c686cc;
-}
-
-.transition-metal {
-  color: #fd8572;
-}
-
-.post-transition-metal {
-  color: #4cddf3;
-}
-
-.metalloid {
-  color: #3aefb6;
-}
-
-.other-nonmetal {
-  color: #52ee61;
-}
-
-.noble-gas {
-  color: #759fff;
-}
-
-.unknown {
-  color: #cccccc;
-}
+    .felements {
+      color: rgb(43, 189, 24);
+    }
 
 </style>
 
@@ -303,77 +274,89 @@
 .r10 {
   grid-row: 10;
 }
-
-.c1 {
-  grid-column: 1;
+.r11 {
+  grid-row: 11;
 }
 
-.c2 {
+.c-1 {
+  grid-column: 1;
+}
+.c0 {
   grid-column: 2;
 }
 
-.c3 {
+.c1 {
   grid-column: 3;
 }
 
-.c4 {
+.c2 {
   grid-column: 4;
 }
 
-.c5 {
+.c3 {
   grid-column: 5;
 }
 
-.c6 {
+.c4 {
   grid-column: 6;
 }
 
-.c7 {
+.c5 {
   grid-column: 7;
 }
 
-.c8 {
+.c6 {
   grid-column: 8;
 }
 
-.c9 {
+.c7 {
   grid-column: 9;
 }
 
-.c10 {
+.c8 {
   grid-column: 10;
 }
 
-.c11 {
+.c9 {
   grid-column: 11;
 }
 
-.c12 {
+.c10 {
   grid-column: 12;
 }
 
-.c13 {
+.c11 {
   grid-column: 13;
 }
 
-.c14 {
+.c12 {
   grid-column: 14;
 }
 
-.c15 {
+.c13 {
   grid-column: 15;
 }
 
-.c16 {
+.c14 {
   grid-column: 16;
 }
 
-.c17 {
+.c15 {
   grid-column: 17;
 }
 
-.c18 {
+.c16 {
   grid-column: 18;
+}
+.c17 {
+  grid-column: 19;
+}
+.c18 {
+  grid-column: 20;
+  width: ;
+}
+.c19 {
+  grid-column: 21;
 }
 
 </style>
@@ -491,30 +474,106 @@
 
 
 <div class="wrapper">
-    <input class="category-toggle" type="radio" id="alkali-metals" name="categories"/>
-    <input class="category-cancel" type="radio" id="cancel" name="categories"/>
-    <input class="category-toggle" type="radio" id="alkaline-earth-metals" name="categories"/>
-    <input class="category-cancel" type="radio" id="cancel" name="categories"/>
-    <input class="category-toggle" type="radio" id="lanthanoids" name="categories"/>
-    <input class="category-cancel" type="radio" id="cancel" name="categories"/>
-    <input class="category-toggle" type="radio" id="actinoids" name="categories"/>
-    <input class="category-cancel" type="radio" id="cancel" name="categories"/>
-    <input class="category-toggle" type="radio" id="transition-metals" name="categories"/>
-    <input class="category-cancel" type="radio" id="cancel" name="categories"/>
-    <input class="category-toggle" type="radio" id="post-transition-metals" name="categories"/>
-    <input class="category-cancel" type="radio" id="cancel" name="categories"/>
-    <input class="category-toggle" type="radio" id="metalloids" name="categories"/>
-    <input class="category-cancel" type="radio" id="cancel" name="categories"/>
-    <input class="category-toggle" type="radio" id="other-nonmetals" name="categories"/>
-    <input class="category-cancel" type="radio" id="cancel" name="categories"/>
-    <input class="category-toggle" type="radio" id="noble-gasses" name="categories"/>
-    <input class="category-cancel" type="radio" id="cancel" name="categories"/>
-    <input class="category-toggle" type="radio" id="unknown" name="categories"/>
-    <input class="category-cancel" type="radio" id="cancel" name="categories"/>
+
+
 
 <!--periodic table-->
     <div class="periodic-table">
-      <div style="height: 50px;" class="element other-nonmetal c1 r1">
+
+      <!--period numbers and name-->
+      <div class="c0 r1" style="color: rgb(255, 255, 255);">
+        <div class="row">
+
+          </div>
+            <div class="element c6 r6">
+              <div class="overlay"></div>
+              <div class="square" style="width: 40px;">
+                <p style=" text-align: center;">1</p>
+              </div>
+            </div>
+          </div>
+                 <div class="c0 r2" style="color: rgb(255, 255, 255);">
+        <div class="row">
+
+          </div>
+            <div class="element c6 r6">
+              <div class="overlay"></div>
+              <div class="square" style="width: 25px;">
+                <h1 style=" text-align: center;>2</h1>
+              </div>
+            </div>
+          </div>
+
+      <div class="c0 r3" style="color: rgb(255, 255, 255);">
+        <div class="row">
+
+          </div>
+            <div class="element c6 r6">
+              <div class="overlay"></div>
+              <div class="square" style="width: 25px;">
+                <p style=" text-align: center;">3</p>
+              </div>
+            </div>
+          </div>
+
+      <div class="c0 r4" style="color: rgb(255, 255, 255);">
+        <div class="row">
+
+          </div>
+            <div class="element c6 r6">
+              <div class="overlay"></div>
+              <div class="square" style="width: 25px;">
+                <p style=" text-align: center;">4</p>
+              </div>
+            </div>
+          </div>
+
+      <div class="c0 r5" style="color: rgb(255, 255, 255);">
+        <div class="row">
+
+          </div>
+            <div class="element c6 r6">
+              <div class="overlay"></div>
+              <div class="square" style="width: 25px;">
+                <p style=" text-align: center;">5</p>
+              </div>
+            </div>
+          </div>
+
+      <div class="c0 r6" style="color: rgb(255, 255, 255);">
+        <div class="row">
+
+          </div>
+            <div class="element c6 r6">
+              <div class="overlay"></div>
+              <div class="square" style="width: 25px;">
+                <p style=" text-align: center;">6</p>
+             </div>
+            </div>
+          </div>
+
+          <div class="c0 r7" style="color: rgb(255, 255, 255);">
+            <div class="row">
+    
+              </div>
+                <div class="element c6 r6">
+                  <div class="overlay"></div>
+                  <div class="square" style="width: 25px;">
+                    <p style=" text-align: center;">7</p>
+                  </div>
+                </div>
+              </div>
+              <div class="c-1 r7" style="color: rgb(255, 255, 255);">
+                <div class="row">
+                  <div class="col-6">
+                      <p style="rotate: -90deg; text-align: center;width: 25px;">PERIODI</p>
+                  </div>
+                </div>
+              </div>
+
+
+
+      <div style="height: 0px;" class="element other-nonmetal c1 r1">
         <input class="activate" type="radio" name="elements"/>
         <input class="deactivate" type="radio" name="elements"/>
         <div class="overlay"></div>
@@ -530,7 +589,7 @@
           </ul>
         </div>
       </div>
-      <div style="height: 50px;" class="element noble-gas c18 r1">
+      <div style="height: 0px;" class="element noble-gas c18 r1">
         <input class="activate" type="radio" name="elements"/>
         <input class="deactivate" type="radio" name="elements"/>
         <div class="overlay"></div>
@@ -540,7 +599,7 @@
             <div class="symbol">He</div>
             <div class="name">Helium</div>
           </div>
-          <div class="atomic-mass">4.0026</div>
+          <div class="atomic-mass">40026</div>
           <ul class="atomic-weight">
             <li>2</li>
           </ul>
@@ -2905,50 +2964,38 @@
           </ul>
         </div>
       </div>
-      <div class="placeholder lanthanoid c3 r6">
+      <div class="element unknown c3 r6">
         <div class="square">57-71</div>
       </div>
-      <div class="placeholder actinoid c3 r7">
+      <div class="element unknown c3 r7">
         <div class="square">89-103</div>
       </div>
       <div class="gap c3 r8"></div>
       <div class="key">
-        <div class="row" style="height: 50px;">
-          <div class="col">
-            <label class="alkali-metal" for="alkali-metals">Alkali Metals</label>
-          </div>
-          <div class="col">
-            <label class="alkaline-earth-metal" for="alkaline-earth-metals">Alkaline Earth Metals</label>
-          </div>
-          <div class="col">
-            <label class="lanthanoid" for="lanthanoids">Lanthanoids</label>
-          </div>
-          <div class="col">
-            <label class="actinoid" for="actinoids">Aktinoids</label>
-          </div>
-          <div class="col">
-            <label class="transition-metal" for="transition-metals">Transition Metals</label>
-          </div>
-          <div class="col">
-            <label class="post-transition-metal" for="post-transition-metals">Post-Transition Metals</label>
-          </div>
-          <div class="col">
-            <label class="metalloid" for="metalloids">Metalloids</label>
-          </div>
-          <div class="col">
-            <label class="other-nonmetal" for="other-nonmetals">Other Nonmetals</label>
-          </div>
-          <div class="col">
-            <label class="noble-gas" for="noble-gasses">Noble Gasses</label>
-          </div>
-          <div class="col">
-            <label class="unknown" for="unknown">Unknown</label>
-          </div>
+
 
         </div>
       </div>
     </div>
   </div>
+
+  <div style="text-align: center;" class="row">
+    <div class="col">
+   <button>BACK</button> 
+    </div>
+    <div class="col">
+      <p style="color: white;">YEAR</p> 
+       </div>
+       <div class="col">
+        <button>FORWARD</button> 
+         </div>
+
+   <div>
+
+   </div>
+
+  
+
 
 </body>
 
