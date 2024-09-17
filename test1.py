@@ -19,7 +19,7 @@ class Human:
             sexname = "vīrietis"
         else:
             sexname = "TEST" 
-        print(f"sveiki, mani sauc {self.name}, mans dzimums ir {sexname}, man ir {self.age} gadi.")
+        return f"sveiki, mani sauc {self.name}, mans dzimums ir {sexname}, man ir {self.age} gadi."
 
     def sexchange(self):
         newgender = input("Ievadi jauno dzimumu ('v' vīrietis vai 's' sieviete): ").lower()
@@ -30,23 +30,23 @@ class Sieviete(Human):
     def __init__(self, name, age, hair_color):
         super().__init__(name, age, "s")
         self.__hair_color = hair_color
-        self.info()
+        # self.info()
     
     def info(self):
         super().info()
-        print("Mana matu krāsa ir", self.__hair_color)
+        # ("Mana matu krāsa ir", self.__hair_color)
 
 # Example Usage
-persona = Human("Marta", 34, "s")
-print(persona.name, persona.age, persona.sex)
+# persona = Human("Marta", 34, "s")
+# print(persona.name, persona.age, persona.sex)
 
-person = Human("Aleksis", 17, "v")
-print(person.name, person.age, person.sex)
+# person = Human("Aleksis", 17, "v")
+# print(person.name, person.age, person.sex)
 
-person.birthday()
-print(person.age)
-person.info()
-person.namechange()
-person.sexchange()
+# person.birthday()
+# print(person.age)
+# person.info()
+# person.namechange()
+# person.sexchange()
 
-personn = Sieviete("Anna", 18, "Blonda")
+# personn = Sieviete("Anna", 18, "Blonda")
