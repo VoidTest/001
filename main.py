@@ -9,7 +9,7 @@ all_humans = []
 # root window
 root = tk.Tk()
 root.title('Human Generator')
-root.geometry('300x300')
+root.geometry('500x300')
 root.resizable(False, False)
 
 
