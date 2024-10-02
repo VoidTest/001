@@ -98,6 +98,23 @@ def divu_burtu_kombinacijas():
 def kapinat_divi(n):
     return 2 ** n
 
+# Task 1: Sum of multiples of 3 or 5 below 1000
+def sum_of_multiples():
+    sum_of_multiples = sum(x for x in range(1000) if x % 3 == 0 or x % 5 == 0)
+    print(f"Sum of multiples of 3 or 5 below 1000 is: {sum_of_multiples}")
+
+# Task 2: Sum of even Fibonacci numbers below 4 million
+def sum_even_fibonacci():
+    a, b = 1, 2
+    even_sum = 0
+
+    while a <= 4000000:
+        if a % 2 == 0:
+            even_sum += a
+        a, b = b, a + b
+
+    print(f"Sum of even Fibonacci numbers below 4 million is: {even_sum}")
+
 def main():
     greet_user()
     calculate_vat()
@@ -116,6 +133,10 @@ def main():
         print(f"Skaitlis 2^{n} ir: {rezultats}")
     except ValueError:
         print("Lūdzu, ievadiet derīgu skaitli.")
+
+    # Call the two new functions
+    sum_of_multiples()
+    sum_even_fibonacci()
 
 if __name__ == "__main__":
     main()
