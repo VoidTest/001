@@ -1,8 +1,10 @@
 class Item:
-    def __init__(self, name, amount, type):
+    def __init__(self, name, amount, type, price, manufacturer):
         self.name = name
         self.type = type
         self.amount = amount
+        self.price = price 
+        self.manufacturer = manufacturer 
         
     def addition(self):
         self.amount += 1
@@ -13,13 +15,10 @@ class Item:
         self.name = new_name
         
     def info(self):
-        if self.type == "p":
-            typename = "programmatura"
-        elif self.type == "d":
-            typename = "dators"
+        if self.manufacturer:
+            return f"Item: {self.name}, Amount: {self.amount}, Type: {self.type}, Manufacturer: {self.manufacturer}"
         else:
-            typename = "NaN" 
-        return f"sveiki, mani sauc {self.name}, mans dzimums ir {typename}, man ir {self.amount} gadi."
+            return f"Item: {self.name}, Amount: {self.amount}, Type: {self.type}"
 
     def typechange(self):
         newtype = input("Ievadi jauno dzimumu ('v' vīrietis vai 's' sieviete): ").lower()
