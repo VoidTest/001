@@ -5,7 +5,28 @@ def spēles_sākšana():
     global atjaunot_attēlojumu  # Izmanto globālo mainīgo, lai atiestatītu attēlojumu jaunai spēlei
     
     # Vārdu saraksts, no kura nejauši izvēlēties spēlei
-    vārdu_saraksts = ["aardvark", "baboon", "camel", "jazz", "grass", "follow", "castle", "cloud"]
+    vārdu_saraksts = [
+    "ābols", "kārta", "pāris", "zieds", "māja",
+    "saule", "debesis", "cilvēks", "grāmata", "mežs",
+    "mūzika", "uguns", "kaķis", "putns", "zeme",
+    "lapa", "kalns", "zvaigzne", "daba", "darbs",
+    "mīlestība", "prieks", "veselība", "talants", "ideja",
+    "atmiņa", "skola", "pasaules", "māksla", "galds",
+    "mājas", "zināšanas", "zivis", "piedāvājums", "pārbaude",
+    "attiecības", "darbība", "gudrība", "jaunums", "līdzsvars",
+    "piedalīšanās", "atbildība", "pārveidošana", "uzdevums", "nepieciešamība",
+    "mērķis", "izvēle", "pārsteigums", "pieredze", "noslēpums",
+    "talants", "pārvaldība", "zīmējums", "rakstura", "veikals",
+    "komentārs", "stils", "mērķis", "situācija", "risinājums",
+    "dizains", "pārvaldīt", "izglītība", "sociālais", "augstums",
+    "jaunatne", "kvalitāte", "veiksme", "cienīt", "atvērt",
+    "ziedu", "izstrādāt", "izpratne", "talants", "rūpes",
+    "sadarbība", "spēja", "apmācība", "ieguldījums", "daba",
+    "patiesība", "izveidot", "darījums", "jaunatne", "pārliecība",
+    "sākums", "sistēma", "pašreiz", "jaunums", "izpēte",
+    "mūzika", "darbība", "cita", "pārdot", "apzināties",
+    "jauns", "pārsteigums", "sastāvēt", "pietiek", "sistēma"
+]
     
     # Nejauši izvēlas vārdu no vārdu saraksta un pārveido to par rakstzīmju sarakstu
     izvēlētais_vārds = random.choice(vārdu_saraksts)
@@ -57,16 +78,21 @@ def minējuma_izteikšana(minētie_burti, izvēlētais_vārds, tukšo_vietu_sara
     # Saņem spēlētāja minējumu un pārveido to par mazajiem burtiem, lai nodrošinātu nejutību pret reģistru
     minējums = input("Ievadi minējumu: ").lower()
     
+    # Pārbauda, vai ievadītais minējums ir tikai 1 burts
+    if len(minējums) != 1:
+        print("Lūdzu, ievadiet tikai vienu burtu.")
+        return False
+
     # Ja spēlētājs jau ir minējis šo burtu, informē un atgriež False (nav nepieciešams vēlreiz apstrādāt minējumu)
     if minējums in minētie_burti:
-        print("Tu jau minēji šo burtu.")
+        print("Tu jau minēji šo burtu.") 
         return False
     
     # Pievieno jauno minēto burtu sarakstam ar minētajiem burtiem
     minētie_burti.append(minējums)
     
     # Pārbaudi, vai minētais burts ir izvēlētajā vārdā
-    for i, burts in enumerate(izvēlētais_vārds): # enumerate dod katram burtam sarakstā indexu jeb ciparu.
+    for i, burts in enumerate(izvēlētais_vārds):  # Enumerate dod katram burtam sarakstā indexu jeb ciparu.
         if minējums == burts:  # Ja minētais burts ir atrasts
             tukšo_vietu_saraksts[i] = minējums  # Atjauno tukšo sarakstu (pareizo minējumu attēlojums) ar minēto burtu
             pareizs_minējums = True  # Iestata karodziņu uz True, jo minējums bija pareizs
@@ -77,6 +103,7 @@ def minējuma_izteikšana(minētie_burti, izvēlētais_vārds, tukšo_vietu_sara
         atjaunot_attēlojumu += 1  # Palielina pakaramā pakāpi, ja minējums bija nepareizs
     
     return True  # Atgriež True, lai norādītu, ka minējums tika apstrādāts
+
 
 # Funkcija, kas kontrolē spēles plūsmu un pārvalda vairākas spēles sesijas
 def galvenais():
