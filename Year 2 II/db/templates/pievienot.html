@@ -71,6 +71,22 @@
     </tr>
     {% endfor %}
 </table>
+<h1>Vid atzime</h1>
+<table class="table">
+    <tr>
+        <th>Vārds</th>
+        <th>Uzvārds</th>
+        <th>Priekšmets</th>
+        <th>Videja Atzime</th>
+    </tr>
+    {% for viens in sk_prieksmeti %}
+    <tr>
+    <td>{{viens[0]}}</td>
+    <td>{{viens[1]}}</td>
+    <td>{{viens[2]}}</td>
+    </tr>
+    {% endfor %}
+</table>
 
 
 

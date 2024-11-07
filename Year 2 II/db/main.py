@@ -1,6 +1,6 @@
 import sqlite3
 from flask import Flask, render_template, request, redirect
-from dati import iegut_skolotajus, pievienot_skolenu, pievienot_prieksmetu, pievienot_skolotaju, iegut_skolenus, iegut_prieksmetus, pievienot_atzimi, iegut_atzimes, iegut_sk_prieksmetus
+from dati import iegut_skolotajus, pievienot_skolenu, pievienot_prieksmetu, pievienot_skolotaju, iegut_skolenus, iegut_prieksmetus, pievienot_atzimi, iegut_atzimes, iegut_sk_prieksmetus, iegut_videjas_atzimes
 
 
 app = Flask(__name__)
@@ -41,7 +41,7 @@ def pievienot():
     sk_prieksmeti = iegut_sk_prieksmetus
     if request.method == "POST":
         print(request.form['skolotajs'])
-    return render_template("pievienot.html", skolotaji = skolotaji, skoleni=skoleni, prieksmeti=prieksmeti, atzimes=atzimju_dati)
+    return render_template("pievienot.html", skolotaji = skolotaji, skoleni=skoleni, prieksmeti=prieksmeti, atzimes=atzimju_dati, sk_prieksmeti=sk_prieksmeti)
 
 @app.route("/pievienot/atzimes", methods = ["POST"])
 def atzimes():
@@ -50,6 +50,11 @@ def atzimes():
     prieksmets = request.form['prieksmets']
     pievienot_atzimi(atzime,skolens, prieksmets)
     return redirect("/pievienot")
+
+@app.route("/atzimes")
+def atzimes():
+    dati = iegut_videjas_atzimes()
+    return render_template("vidatzimes.html")
 
 
 

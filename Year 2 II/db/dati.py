@@ -185,5 +185,9 @@ def iegut_sk_prieksmetus():
     dati = cur.fetchall()
     return dati
 
+def iegut_videjas_atzimes():
+    dati = []
+    return dati
+
 
 
