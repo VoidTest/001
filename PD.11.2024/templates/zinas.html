@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="lv">
+<head><title>Ziņas</title></head>
+<body>
+    <h1>Ziņu lapa</h1>
+    <form method="POST">
+        <select name="lietotajs" required>
+            {% for lietotajs in lietotaji %}
+            <option value="{{ lietotajs[0] }}">{{ lietotajs[3] }} ({{ lietotajs[1] }} {{ lietotajs[2] }})</option>
+            {% endfor %}
+        </select>
+        <textarea name="zina" placeholder="Ziņa" required></textarea>
+        <button type="submit">Pievienot ziņu</button>
+    </form>
+    {% if error %}
+    <p style="color: red;">{{ error }}</p>
+    {% endif %}
+    <h2>Ziņas</h2>
+    <ul>
+        {% for z in zinas %}
+        <li>{{ z[0] }} {{ z[1] }}: {{ z[2] }} ({{ z[3] }})</li>
+        {% endfor %}
+    </ul>
+    <a href="/registre">Reģistrācija</a> | <a href="/statistika">Statistika</a>
+</body>
+</html>

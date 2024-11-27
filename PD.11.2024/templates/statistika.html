@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="lv">
+<head><title>Statistika</title></head>
+<body>
+    <h1>Statistika</h1>
+    <table>
+        <tr>
+            <th>Vārds</th>
+            <th>Uzvārds</th>
+            <th>Ziņu skaits</th>
+        </tr>
+        {% for rinda in statistika %}
+        <tr>
+            <td>{{ rinda[0] }}</td>
+            <td>{{ rinda[1] }}</td>
+            <td>{{ rinda[2] }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+    <a href="/registre">Reģistrācija</a> | <a href="/zinas">Ziņas</a>
+</body>
+</html>

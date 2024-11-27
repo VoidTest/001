@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="lv">
+<head><title>Reģistrācija</title></head>
+<body>
+    <h1>Reģistrācija</h1>
+    <form method="POST">
+        <input type="text" name="vards" placeholder="Vārds" required>
+        <input type="text" name="uzvards" placeholder="Uzvārds" required>
+        <input type="text" name="lietotajvards" placeholder="Lietotājvārds" required>
+        <button type="submit">Reģistrēt</button>
+    </form>
+    {% if error %}
+    <p style="color: red;">{{ error }}</p>
+    {% endif %}
+    <h2>Reģistrētie lietotāji</h2>
+    <ul>
+        {% for lietotajs in lietotaji %}
+        <li>{{ lietotajs[3] }} ({{ lietotajs[1] }} {{ lietotajs[2] }})</li>
+        {% endfor %}
+    </ul>
+    <a href="/zinas">Ziņas</a> | <a href="/statistika">Statistika</a>
+</body>
+</html>
