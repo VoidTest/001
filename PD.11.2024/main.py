@@ -50,4 +50,4 @@ def statistika():
     return render_template("statistika.html", statistika=statistika)
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run(debug=False)
