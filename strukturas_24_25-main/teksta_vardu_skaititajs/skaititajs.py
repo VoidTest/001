@@ -1,10 +1,10 @@
 teksts = ""
-with open("strukturas_24_25-main/teksta_vardu_skaititajs/teksts.txt", "r", encoding="utf-8") as f:
+with open("teksta_vardu_skaititajs/teksts.txt", "r", encoding="utf-8") as f:
     teksts = f.read()
 
 vardi = teksts.split()
 for i in range(len(vardi)):
-    vardi[i].strip(".,-?*\'\")(")
+    vardi[i] = vardi[i].strip(".,!-?*\'\")(")
     vardi[i] = vardi[i].lower()
 
 visi_vardi = {}
@@ -15,6 +15,7 @@ for vards in vardi:
     else:
         visi_vardi[vards] = 1
 
+
 biezakais_vards = ""
 varda_skaits = 0
 
@@ -23,5 +24,4 @@ for viens in visi_vardi:
         biezakais_vards = viens
         varda_skaits = visi_vardi[viens]
 
-
-print(biezakais_vards, varda_skaits)
+print (biezakais_vards, varda_skaits)
