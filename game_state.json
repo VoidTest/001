@@ -1,0 +1,1 @@
+{"age": "Caveman Age", "resources": {"food": {"amount": 11, "rate": 1}, "wood": {"amount": 9, "rate": 1}, "metal": {"amount": 0, "rate": 0}}, "buildings": [{"name": "Hut", "current_cost": {"food": 11}, "count": 1}, {"name": "Farm", "current_cost": {"wood": 15}, "count": 0}, {"name": "Mine", "current_cost": {"food": 20, "wood": 10}, "count": 0}]}
