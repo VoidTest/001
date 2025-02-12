@@ -1,14 +1,55 @@
-{% extends 'index.html'%}
-{% block saturs%}
+{% extends 'index.html' %}
+{% block saturs %}
 <h1>Sveiki čatā!</h1>
 
-<div id = "chats"></div>
+<div id="chats" style="border:1px solid #ccc; padding:10px; height:300px; overflow-y:auto;"></div>
 <div>
-    <input id = "vards" placeholder="Vārds">
-    <input id = "teksts" placeholder="Ziņa">
-    <button onclick="suutiitZinju()">Sūtīt!</button>
+  <input id="vards" placeholder="Vārds">
+  <input id="teksts" placeholder="Ziņa">
+  <button onclick="sendMessage()">Sūtīt!</button>
 </div>
+
 <script>
-    lasiitZinju();
+  // updateChat now fetches both the chat messages and the blue state.
+  function updateChat() {
+    Promise.all([
+      fetch('/jschats/lasiit').then(res => res.json()),
+      fetch('/jschats/blue').then(res => res.json())
+    ])
+    .then(([messages, blueData]) => {
+      // blueData should be an object like { "blue": true } if \blue was sent.
+      const color = blueData.blue ? "blue" : "black";
+      const chatDiv = document.getElementById('chats');
+      chatDiv.innerHTML = messages
+        .map(msg => `<p style="color: ${color};">${msg}</p>`)
+        .join('');
+      chatDiv.scrollTop = chatDiv.scrollHeight;
+    })
+    .catch(console.error);
+  }
+
+  function sendMessage() {
+    const name = document.getElementById('vards').value;
+    const text = document.getElementById('teksts').value;
+    if (!name || !text) {
+      alert("Lūdzu, aizpildiet gan vārdu, gan ziņu!");
+      return;
+    }
+    fetch('/jschats/suutiit', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ vards: name, saturs: text })
+    })
+    .then(res => res.json())
+    .then(() => {
+      document.getElementById('teksts').value = '';
+      updateChat();
+    })
+    .catch(console.error);
+  }
+
+  // Initial load and auto-refresh every second.
+  updateChat();
+  setInterval(updateChat, 1000);
 </script>
 {% endblock %}
